@@ -1,5 +1,5 @@
 # sky_tracker
-GOTO system for my telescope base on Raspberry Pi
+GOTO system for my telescope based on Raspberry Pi
 
 ## Usage
 To start using the existing code, create observer_location.json file with the following structure:
