@@ -11,4 +11,4 @@ To start using the existing code, create observer_data.json file with the follow
     "WEATHER_API_KEY":"example api_key"
 }
 ```
-Where ```"Latitude"``` and ```"Longtitude"``` are your geographical coordinates in degrees, ```"Elevation"``` - your elevation above sea level (in meters), ```"WEATHER_API_KEY"``` - api key to openweathermap.org (need to register on the website to get it).
+Where ```"Latitude"``` and ```"Longtitude"``` are your geographical coordinates in degrees, ```"Elevation"``` - your elevation above sea level (in meters), ```"WEATHER_API_KEY"``` - api key to [openweathermap.org](openweathermap.org) (need to register on the website to get it).
