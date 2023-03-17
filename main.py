@@ -1,4 +1,5 @@
 import astroplan
+from astropy.coordinates import Angle
 from astropy.time import Time
 from pytz import timezone
 import json
@@ -13,10 +14,12 @@ cds.enable()
 
 # Get information about observation location and weather
 location = json.load(open('observer_data.json'))
-observer_location = EarthLocation.from_geodetic(lon = location['Longitude'], 
-                                                lat = location['Latitude'], 
-                                                height = location['Elevation'])
+lon, lat = (Angle(location['Longitude'] * u.deg), Angle(location['Latitude'] * u.deg))
+print(lon, lat) 
+observer_location = EarthLocation.from_geodetic(lon=lon, lat=lat, 
+                                                height = location['Elevation'] * u.m)
 
+print(observer_location)
 temperature, humidity, pressure = get_weather_data(location)
 
 observer = Observer(name='VORLOV Telescope',
@@ -31,6 +34,6 @@ observer = Observer(name='VORLOV Telescope',
 object_name = 'Altair'
 target_object = FixedTarget.from_name(object_name)
 time = Time(datetime.now())
-
-print(observer.target_is_up(time, target_object))
+print(target_object)
+# print(observer.target_is_up(time, target_object))
 
