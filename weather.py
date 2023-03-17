@@ -1,12 +1,14 @@
+import requests
+
 def format_weather_data(temperature, humidity, pressure):
    return (f"Temperature: {temperature} °C\n"
            f"Humidity: {humidity} %\n"
            f"Pressure: {pressure} hPa")
 
 def get_weather_data(location):
-   API_KEY = location[WEATHER_API_KEY]
+   API_KEY = location['WEATHER_API_KEY']
    URL = (f"https://api.openweathermap.org/data/2.5/weather?"
-         f"lat={location['Latitude']}&lon={location['Longtitude']}"
+         f"lat={location['Latitude']}&lon={location['Longitude']}"
          f"&appid={API_KEY}&units=metric")
 
    response = requests.get(URL)
