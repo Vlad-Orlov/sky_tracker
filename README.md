@@ -2,7 +2,7 @@
 GOTO system for my telescope based on Raspberry Pi
 
 ## Usage
-To start using the existing code, create observer_location.json file with the following structure:
+To start using the existing code, create observer_data.json file with the following structure:
 ```json
 {
     "Latitude": 0.0,
