@@ -19,7 +19,10 @@ def get_weather_data(location):
       print(format_weather_data(temperature, humidity, pressure))
    else:
       print("Couldn't get weather data from online. Setting dummy values:")
-      temperature, humidity, pressure = 5, 80, 1013.25
+      temperature, humidity, pressure = (location["AVG_TEMP"],
+                                         location["AVG_HUMIDITY"],
+                                         location["AVG_PRESSURE"])
+                                         
       print(format_weather_data(temperature, humidity, pressure))
 
    return (temperature, humidity, pressure)
